@@ -1,6 +1,6 @@
-# CPU Ray Tracer: Community Project
+# CPU Ray Tracer
 
-Let’s build a CPU-based ray tracer together, using any programming language you prefer, and follow along with Peter Shirley’s **[Ray Tracing Books](https://raytracing.github.io/)**. Everyone will implement their own version in a separate folder. We can then compare our results, explore how the same ideas are implemented across different languages, and help each other out whenever someone gets stuck.
+This is a community project where we build a CPU-based ray tracer together. You can use any programming language you like and follow along with Peter Shirley’s **[Ray Tracing in One Weekend](https://raytracing.github.io/)** books. Everyone will make their own version of the ray tracer in a separate folder. This lets us compare the results and see how the same ideas can be implemented in different programming languages. If someone gets stuck, we can help each other out and figure things out together.
 
 ---
 
@@ -189,12 +189,11 @@ git merge main
 
 ## Getting help
 
-- **Stuck on a bug?** Open a GitHub **Issue** with your code link, the expected image, and your actual image.
-- **Want to discuss ideas?** Use **Discussions** on this repo.
-- **Anything else?** Join our Discord server: <discord-invite-link>
+If you have any doubts or get stuck, open a **GitHub Issue** in this repo so we can discuss it and help each other. You can also join our **[Discord server](https://discord.gg/dnQ8qamtA4)** to discuss things in more detail:
 
 ---
 
 ## License
 
+This project is released under the **MIT License**, permitting use, copying, modification, merging, publishing, distribution, sublicensing, and sale of copies of the software, subject to the terms of the license.
 
