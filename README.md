@@ -4,14 +4,14 @@ A community project to build CPU-based ray tracers following Peter Shirley’s *
 
 ## Table of Contents
 
-1. [About the project](#about-the-project)
-2. [Prerequisites](#prerequisites)
-3. [Syllabus](#syllabus)
-4. [Repository structure](#repository-structure)
-5. [How to contribute (step by step)](#how-to-contribute-step-by-step)
-6. [Rules and conventions](#rules-and-conventions)
-7. [Getting help](#getting-help)
-8. [License](#license)
+- [About the project](#about-the-project)
+- [Prerequisites](#prerequisites)
+- [Syllabus](#syllabus)
+- [Repository structure](#repository-structure)
+- [How to contribute (step by step)](#how-to-contribute-step-by-step)
+- [Rules and conventions](#rules-and-conventions)
+- [Getting help](#getting-help)
+- [License](#license)
 
 ---
 
