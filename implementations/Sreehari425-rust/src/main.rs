@@ -4,7 +4,12 @@ use std::path::PathBuf;
 
 use clap::Parser;
 
+mod color;
 mod error;
+pub mod vec3;
+
+use color::write_color;
+use vec3::Color;
 
 #[derive(Parser, Debug)]
 #[command(version, about = "A CPU ray tracer")]
@@ -27,15 +32,12 @@ fn render(output: File) -> error::Result<()> {
     for j in 0..height {
         eprintln!("Scanlines remaining: {}", height - j);
         for i in 0..width {
-            let r = i as f64 / (width - 1) as f64;
-            let g = j as f64 / (height - 1) as f64;
-            let b = 0.0;
-
-            let ir = (255.999 * r) as u32;
-            let ig = (255.999 * g) as u32;
-            let ib = (255.999 * b) as u32;
-
-            writeln!(out, "{ir} {ig} {ib}")?;
+            let pixel_color = Color::new(
+                i as f64 / (width - 1) as f64,
+                j as f64 / (height - 1) as f64,
+                0.0,
+            );
+            write_color(&mut out, pixel_color)?;
         }
     }
     eprintln!("Done LOL");
