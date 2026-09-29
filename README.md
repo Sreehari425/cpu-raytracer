@@ -117,7 +117,7 @@ cd cpu-raytracer
 
 ### 3. Add the original repo as `upstream` (to stay in sync)
 ```bash
-git remote add upstream https://github.com/<org-name>/cpu-raytracer.git
+git remote add upstream https://github.com/nira-community/cpu-raytracer
 git remote -v
 ```
 
@@ -156,11 +156,11 @@ Later pushes are just `git push`.
 
 ### 8. Open a pull request
 1. Go to your fork on GitHub and click **Compare & pull request**.
-2. Base repository: `<org-name>/cpu-raytracer`, base branch: `main`.
-3. Title: `alice-rust: chapters 1-5`
+2. Base repository: `nira-community/cpu-raytracer`, base branch: `main`.
+3. Title: `alice-rust: done anti-aliasing`
 4. Describe what you completed and attach a rendered image if you can.
 
-A maintainer will review and merge. You can keep pushing to the same branch to update the PR, or open a new PR for each milestone.
+The maintainer will review and merge. You can keep pushing to the same branch to update the PR, or open a new PR for each milestone.
 
 ### 9. Keep your fork up to date
 ```bash
