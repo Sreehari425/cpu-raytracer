@@ -51,8 +51,6 @@ We will finish each book chapter by chapter, and move on to the next book once t
 
 ```
 cpu-raytracer/
-├── .github/
-│   └── CODEOWNERS  
 ├── README.md       
 └── implementations/
     ├── alice-rust/    
