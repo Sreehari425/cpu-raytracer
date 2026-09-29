@@ -37,7 +37,7 @@ We’ll also be using **[Awesome Graphics](https://nira-community.github.io/awes
 
 ## Syllabus
 
-Our main resource is the **[Ray Tracing Books](https://raytracing.github.io/)** series, which contains three books. We will go through them in this order:
+Our main resource is the **[Ray Tracing in One Weekend](https://raytracing.github.io/)** book series, which contains three books. We will go through them in this order:
 
 1. [Ray Tracing in One Weekend](https://raytracing.github.io/books/RayTracingInOneWeekend.html)
 2. [Ray Tracing: The Next Week](https://raytracing.github.io/books/RayTracingTheNextWeek.html)
