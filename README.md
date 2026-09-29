@@ -51,9 +51,9 @@ We will finish each book chapter by chapter, and move on to the next book once t
 
 ```
 cpu-raytracer/
-├── README.md
 ├── .github/
-│   └── CODEOWNERS         
+│   └── CODEOWNERS  
+├── README.md       
 └── implementations/
     ├── alice-rust/    
     ├── bob-cpp/
@@ -65,7 +65,6 @@ cpu-raytracer/
 Your folder is named `implementations/<github-username>-<language>/`.
 
 **The only required files are a `README.md` and a `.gitignore` at the root of your folder.** Everything else is up to you and depends on your language and build system. Use whatever layout is normal for your ecosystem.
-
 
 Your folder `README.md` should include:
 - Language and version
