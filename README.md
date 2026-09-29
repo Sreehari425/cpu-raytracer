@@ -1,7 +1,5 @@
 # CPU Ray Tracer
 
----
-
 ## Table of Contents
 
 1. [About the project](#about-the-project)
