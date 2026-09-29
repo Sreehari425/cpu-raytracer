@@ -25,6 +25,7 @@ fn render(output: File) -> error::Result<()> {
     writeln!(out, "255")?;
 
     for j in 0..height {
+        eprintln!("Scanlines remaining: {}", height - j);
         for i in 0..width {
             let r = i as f64 / (width - 1) as f64;
             let g = j as f64 / (height - 1) as f64;
@@ -37,7 +38,7 @@ fn render(output: File) -> error::Result<()> {
             writeln!(out, "{ir} {ig} {ib}")?;
         }
     }
-
+    eprintln!("Done LOL");
     Ok(())
 }
 
