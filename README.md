@@ -51,7 +51,8 @@ We will finish each book chapter by chapter, and move on to the next book once t
 
 ```
 cpu-raytracer/
-├── README.md       
+├── README.md 
+├── LICENSE      
 └── implementations/
     ├── alice-rust/    
     ├── bob-cpp/
