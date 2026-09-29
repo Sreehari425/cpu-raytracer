@@ -1,5 +1,7 @@
 # CPU Ray Tracer
 
+A community project to build CPU-based ray tracers following Peter Shirley’s **Ray Tracing in One Weekend** books, with everyone creating their own implementation.
+
 ## Table of Contents
 
 1. [About the project](#about-the-project)
@@ -187,7 +189,7 @@ git merge main
 
 ## Getting help
 
-If you have any doubts or get stuck, open a **GitHub Issue** in this repo so we can discuss it and help each other. You can also join our **[Discord server](https://discord.gg/dnQ8qamtA4)** to discuss things in more detail:
+If you have any doubts or get stuck, open a **GitHub Issue** in this repo so we can discuss it and help each other. You can also join our **[Discord server](https://discord.gg/dnQ8qamtA4)** to discuss things in more detailed.
 
 ---
 
