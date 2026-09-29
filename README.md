@@ -54,9 +54,9 @@ cpu-raytracer/
 ├── README.md
 ├── CONTRIBUTING.md
 ├── .github/
-│   └── CODEOWNERS         # reference images from the book for comparison
+│   └── CODEOWNERS         
 └── implementations/
-    ├── alice-rust/       # one folder per contributor + language
+    ├── alice-rust/    
     ├── bob-cpp/
     └── carol-python/
 ```
