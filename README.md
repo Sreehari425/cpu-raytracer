@@ -73,7 +73,7 @@ Your folder `README.md` should include:
 Examples of what a folder might look like:
 
 ```
-# C++ (headers need an include folder)
+# C++
 implementations/bob-cpp/
 ├── .gitignore
 ├── README.md
@@ -85,7 +85,7 @@ implementations/bob-cpp/
 │   └── main.cpp
 └── output/
 
-# Rust (Cargo layout)
+# Rust
 implementations/alice-rust/
 ├── .gitignore
 ├── README.md
