@@ -52,7 +52,6 @@ We will finish each book chapter by chapter, and move on to the next book once t
 ```
 cpu-raytracer/
 ├── README.md
-├── CONTRIBUTING.md
 ├── .github/
 │   └── CODEOWNERS         
 └── implementations/
@@ -65,7 +64,8 @@ cpu-raytracer/
 
 Your folder is named `implementations/<github-username>-<language>/`.
 
-**The only required file is a `README.md` at the root of your folder.** Everything else is up to you and depends on your language and build system. Use whatever layout is normal for your ecosystem.
+**The only required files are a `README.md` and a `.gitignore` at the root of your folder.** Everything else is up to you and depends on your language and build system. Use whatever layout is normal for your ecosystem.
+
 
 Your folder `README.md` should include:
 - Language and version
@@ -77,6 +77,7 @@ Examples of what a folder might look like:
 ```
 # C++ (headers need an include folder)
 implementations/bob-cpp/
+├── .gitignore
 ├── README.md
 ├── CMakeLists.txt
 ├── include/
@@ -88,6 +89,7 @@ implementations/bob-cpp/
 
 # Rust (Cargo layout)
 implementations/alice-rust/
+├── .gitignore
 ├── README.md
 ├── Cargo.toml
 └── src/
@@ -95,6 +97,7 @@ implementations/alice-rust/
 
 # Python
 implementations/carol-python/
+├── .gitignore
 ├── README.md
 ├── requirements.txt
 └── raytracer/
