@@ -1,7 +1,5 @@
 # CPU Ray Tracer
 
-This is a community project where we build a CPU-based ray tracer together. You can use any programming language you like and follow along with Peter Shirley’s **[Ray Tracing in One Weekend](https://raytracing.github.io/)** books. Everyone will make their own version of the ray tracer in a separate folder. This lets us compare the results and see how the same ideas can be implemented in different programming languages. If someone gets stuck, we can help each other out and figure things out together.
-
 ---
 
 ## Table of Contents
@@ -19,7 +17,9 @@ This is a community project where we build a CPU-based ray tracer together. You 
 
 ## About the project
 
-Before we get started, it’s worth mentioning that this CPU ray tracer will be our first step into the world of graphics programming. This is intended to be a long-term learning project, so it’s best suited for anyone who is genuinely curious about the subject and willing to stick with it. With that said, I hope you’re all doing well, and welcome!
+This is a community project where we build a CPU-based ray tracer together. You can use any programming language you like and follow along with Peter Shirley’s **[Ray Tracing in One Weekend](https://raytracing.github.io/)** books. Everyone will make their own version of the ray tracer in a separate folder. This lets us compare the results and see how the same ideas can be implemented in different programming languages. If someone gets stuck, we can help each other out and figure things out together.
+
+Before we get started, it’s worth mentioning that this CPU ray tracer will be our first step into the world of graphics programming. This is intended to be a long-term learning project, so it’s best suited for anyone who is genuinely curious about the subject and willing to stick with it. With that said, I hope you’re all doing well, and welcome !
 
 ---
 
