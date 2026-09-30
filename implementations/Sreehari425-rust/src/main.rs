@@ -6,10 +6,13 @@ use clap::Parser;
 
 mod color;
 mod error;
+pub mod object;
 pub mod vec3;
 
 use color::write_color;
-use vec3::Color;
+use object::Object;
+use ray::Ray;
+use vec3::{Color, Point3};
 
 #[derive(Parser, Debug)]
 #[command(version, about = "A CPU ray tracer")]
@@ -17,18 +20,30 @@ struct CpuTracer {
     /// Path to the output PPM image
     #[arg(short, long, value_name = "FILE", default_value = "image.ppm")]
     output: PathBuf,
+
+    /// Swap the black object and white background
+    #[arg(short, long)]
+    invert_colors: bool,
 }
 
-fn ray_color(ray: ray::Ray) -> Color {
-    let unit_direction = ray.direction().unit_vector();
-    let a = 0.5 * (unit_direction.y() + 1.0);
-    (1.0 - a) * Color::new(1.0, 1.0, 1.0) + a * Color::new(0.5, 0.7, 1.0)
+fn ray_color(ray: Ray, object: Object, background: Color) -> Color {
+    if object.hit_distance(ray).is_some() {
+        object.color()
+    } else {
+        background
+    }
 }
 
-fn render(output: File) -> error::Result<()> {
+fn render(output: File, invert_colors: bool) -> error::Result<()> {
     let mut out = BufWriter::new(output);
 
     let camera = camera::Camera::new(400, 16.0 / 9.0);
+    let (object_color, background) = if invert_colors {
+        (Color::new(1.0, 1.0, 1.0), Color::new(0.0, 0.0, 0.0))
+    } else {
+        (Color::new(0.0, 0.0, 0.0), Color::new(1.0, 1.0, 1.0))
+    };
+    let sphere = Object::sphere(Point3::new(0.0, 0.0, -1.0), 0.5, object_color);
 
     writeln!(out, "P3")?;
     writeln!(out, "{} {}", camera.image_width(), camera.image_height())?;
@@ -38,7 +53,7 @@ fn render(output: File) -> error::Result<()> {
         eprintln!("Scanlines remaining: {}", camera.image_height() - y);
         for x in 0..camera.image_width() {
             let ray = camera.ray_for_pixel(x, y);
-            write_color(&mut out, ray_color(ray))?;
+            write_color(&mut out, ray_color(ray, sphere, background))?;
         }
     }
     eprintln!("Done.");
@@ -53,7 +68,7 @@ fn main() -> error::Result<()> {
 
     let file = File::create(&args.output)?;
 
-    render(file)?;
+    render(file, args.invert_colors)?;
 
     Ok(())
 }
