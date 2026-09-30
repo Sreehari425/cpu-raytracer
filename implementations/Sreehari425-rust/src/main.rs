@@ -19,30 +19,34 @@ struct CpuTracer {
     output: PathBuf,
 }
 
+fn ray_color(ray: ray::Ray) -> Color {
+    let unit_direction = ray.direction().unit_vector();
+    let a = 0.5 * (unit_direction.y() + 1.0);
+    (1.0 - a) * Color::new(1.0, 1.0, 1.0) + a * Color::new(0.5, 0.7, 1.0)
+}
+
 fn render(output: File) -> error::Result<()> {
     let mut out = BufWriter::new(output);
 
-    let width = 256;
-    let height = 256;
+    let camera = camera::Camera::new(400, 16.0 / 9.0);
 
     writeln!(out, "P3")?;
-    writeln!(out, "{width} {height}")?;
+    writeln!(out, "{} {}", camera.image_width(), camera.image_height())?;
     writeln!(out, "255")?;
 
-    for j in 0..height {
-        eprintln!("Scanlines remaining: {}", height - j);
-        for i in 0..width {
-            let pixel_color = Color::new(
-                i as f64 / (width - 1) as f64,
-                j as f64 / (height - 1) as f64,
-                0.0,
-            );
-            write_color(&mut out, pixel_color)?;
+    for y in 0..camera.image_height() {
+        eprintln!("Scanlines remaining: {}", camera.image_height() - y);
+        for x in 0..camera.image_width() {
+            let ray = camera.ray_for_pixel(x, y);
+            write_color(&mut out, ray_color(ray))?;
         }
     }
-    eprintln!("Done LOL");
+    eprintln!("Done.");
     Ok(())
 }
+
+pub mod camera;
+pub mod ray;
 
 fn main() -> error::Result<()> {
     let args = CpuTracer::parse();

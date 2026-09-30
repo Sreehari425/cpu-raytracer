@@ -30,14 +30,14 @@ impl<Kind: Copy> Neg for Vec3<Kind> {
     }
 }
 
-impl<Kind: Copy> Add for Vec3<Kind> {
+impl Add for Vector3 {
     type Output = Self;
     fn add(self, rhs: Self) -> Self {
         Self::new(self.x + rhs.x, self.y + rhs.y, self.z + rhs.z)
     }
 }
 
-impl<Kind: Copy> AddAssign for Vec3<Kind> {
+impl AddAssign for Vector3 {
     fn add_assign(&mut self, rhs: Self) {
         self.x += rhs.x;
         self.y += rhs.y;
@@ -45,10 +45,60 @@ impl<Kind: Copy> AddAssign for Vec3<Kind> {
     }
 }
 
-impl<Kind: Copy> Sub for Vec3<Kind> {
+impl Sub for Vector3 {
     type Output = Self;
     fn sub(self, rhs: Self) -> Self {
         Self::new(self.x - rhs.x, self.y - rhs.y, self.z - rhs.z)
+    }
+}
+
+impl Add<Vector3> for Point3 {
+    type Output = Point3;
+    fn add(self, rhs: Vector3) -> Point3 {
+        Point3::new(self.x + rhs.x, self.y + rhs.y, self.z + rhs.z)
+    }
+}
+
+impl Add<Point3> for Vector3 {
+    type Output = Point3;
+    fn add(self, rhs: Point3) -> Point3 {
+        rhs + self
+    }
+}
+
+impl Sub<Vector3> for Point3 {
+    type Output = Point3;
+    fn sub(self, rhs: Vector3) -> Point3 {
+        Point3::new(self.x - rhs.x, self.y - rhs.y, self.z - rhs.z)
+    }
+}
+
+impl Sub for Point3 {
+    type Output = Vector3;
+    fn sub(self, rhs: Point3) -> Vector3 {
+        Vector3::new(self.x - rhs.x, self.y - rhs.y, self.z - rhs.z)
+    }
+}
+
+impl Add for Color {
+    type Output = Self;
+    fn add(self, rhs: Self) -> Self {
+        Self::new(self.x + rhs.x, self.y + rhs.y, self.z + rhs.z)
+    }
+}
+
+impl Sub for Color {
+    type Output = Self;
+    fn sub(self, rhs: Self) -> Self {
+        Self::new(self.x - rhs.x, self.y - rhs.y, self.z - rhs.z)
+    }
+}
+
+impl AddAssign for Color {
+    fn add_assign(&mut self, rhs: Self) {
+        self.x += rhs.x;
+        self.y += rhs.y;
+        self.z += rhs.z;
     }
 }
 
